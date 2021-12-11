@@ -46,7 +46,6 @@
           text-align: center;
           position: absolute;
           width: 150px;
-          opacity: 0;
       }
 
       .doors {
@@ -58,12 +57,16 @@
           cursor: pointer;         
       }
 
-      .hide {
+      #current-present {
+          opacity: 0;
+      }
+
+      #current-doors.hide {
           opacity: 0;
           transition: 3s;
       }
 
-      .show {
+      #current-present.show {
           opacity: 1;
           transition: 3s;
       }
@@ -81,12 +84,12 @@
   <body>
     <main>
       <div class="row">
-        <div class="box" id="openable">
-          <div id="current-doors" class="doors">10.</div>
-          <div id="current-present" class="present">30 minútová masáž</div>
-        </div>
         <div class="box">
-          <div class="doors">11.</div>
+          <div class="present">30 minútová masáž</div>
+        </div>
+        <div class="box" id="openable">
+          <div id="current-doors" class="doors">11.</div>
+          <div id="current-present" class="present">Prečítanie rozprávky podľa vlastného výberu</div>
         </div>
         <div class="box">
           <div class="doors">12.</div>

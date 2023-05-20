@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" media="all">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Snake</h1>
+        <div class="canvas"></div>
+    </div>
+</body>
+<script>
+    test = $('.canvas').snakeGame({
+        FPS : 20,
+        snake_len : 2,
+        scene_height : 256,
+        scene_width : 512,
+    })
+    test.play().focus();
+    test.focus();
+</script>
+</html>

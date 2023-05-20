@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sima | Adventný kalendár</title>
+    <style type="text/css">
+      * {
+          box-sizing: border-box;
+          font-family: monospace;
+          font-style: italic;
+          color: #146B3A;
+      }
+      body, html {
+          margin: 0;
+          padding: 0;
+          widht: 100%;
+          height: 100%;
+          background-image: url(./assets/background.webp);
+      }
+      main {
+          max-width: 700px;
+          margin: 0 auto;
+      }
+
+      h1 {
+          text-align: center;
+          color: #F8B229;
+      }
+
+      .row {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+      }
+      .box {
+          width: 24%;
+          height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 5px;
+          font-size: 1.5em;
+          background-color: #F8B229;
+      }
+
+      .present {
+          text-align: center;
+          position: absolute;
+          width: 150px;
+      }
+
+      .doors {
+          position: absolute;
+      }
+
+      #openable {
+          border: 1px solid red;
+          cursor: pointer;         
+      }
+
+      #current-present {
+          opacity: 0;
+      }
+
+      #current-doors.hide {
+          opacity: 0;
+          transition: 3s;
+      }
+
+      #current-present.show {
+          opacity: 1;
+          transition: 3s;
+      }
+
+      @media screen and (max-width: 500px) {
+          .row {
+              flex-direction: column;
+          }
+          .box {
+              width: 95%;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <div class="box">
+          <div class="present">30 minútová masáž [DONE]</div>
+        </div>
+        <div class="box">
+          <div class="present">2 hodiny hrania hier</div>
+        </div>
+        <div class="box">
+          <div class="present">3 hodiny pomoci s čím koľvek [DONE]</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box">
+          <div class="present">zahranie ľubovoľnej piesne na gitare [VYBRANÝ VIVALDY 4 ROČNÉ OBDOBIA, UFF]</div>
+        </div>
+        <div class="box">
+          <div class="present">uvarenie jedla podľa výberu, treba brať do úvahy moje schopnosti :D [DONE SUSHY]</div>
+        </div>
+        <div class="box">
+          <div class="present">pozívam na obed, teda na donášku [DONE]<br>* pozývam</div>
+        </div>
+        <div class="box">
+          <div class="present">pozívam na buchtu klemy [DONE]</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box">
+          <div class="present">1 hodinu budem robiť čokoľvek budeš chcieť</div>
+        </div>
+        <div class="box">
+          <div class="present">15 minútová masáž nôh [DONE]</div>
+        </div>
+        <div class="box">
+          <div class="present">Pozvánka do kina, teda keď budú najbližšie otvorené, aj z načos</div>
+        </div>
+        <div class="box">
+          <div class="present">spločné nákupi oblečenia, z limitom 50 eur</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box">
+          <div class="present">30 min masáž [DONE]</div>
+        </div>
+        <div class="box">
+          <div class="present">pripravím si prednášku na ľubovolnú tému</div>
+        </div>
+        <div class="box">
+          <div class="present">2 hodiny maznania sa a k tomu dobrota podľa výberu</div>
+        </div>
+        <div class="box" id="openable">
+          <div id="current-doors" class="doors">24.</div>
+          <div id="current-present" class="present">
+            miľujem ťa a neviem čo by si mohla chcieť čo by som pre teba neurobil,
+            tak jedno upratanie celého byt-u?
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+      
+      const currentOpenable = document.getElementById('openable')
+      const currentDoors = document.getElementById('current-doors')
+      const currentPresent = document.getElementById('current-present')
+      
+      currentOpenable.addEventListener('click', event => {
+        currentDoors.classList.add('hide')
+        currentPresent.classList.add('show')
+      })
+    </script>
+  </body>
+</html>

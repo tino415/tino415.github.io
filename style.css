@@ -1,0 +1,16 @@
+body {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+body nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3em;
+}
+
+body nav ul a {
+    text-decoration: none;
+}
